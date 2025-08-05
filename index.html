@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IoT Agriculture Rover - User Manual</title>
+  <title>Agriculture Rover - Project Overview</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f8f8f8;
       margin: 0;
       padding: 0;
+      color: #333;
     }
 
     header {
       background-color: #2e8b57;
       color: white;
-      padding: 30px 20px;
       text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      margin: 0;
     }
 
     nav {
-      background-color: #333;
+      background-color: #444;
       text-align: center;
-      padding: 10px;
+      padding: 10px 0;
     }
 
     nav a {
@@ -37,161 +42,151 @@
     }
 
     main {
+      max-width: 1000px;
+      margin: 30px auto;
       padding: 20px;
       background-color: white;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     h2 {
       color: #2e8b57;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     ul {
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     a {
       color: #2e8b57;
+      text-decoration: none;
     }
 
-    .project-image {
-      display: block;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .app-link {
+      display: inline-block;
+      margin: 15px 0;
+      padding: 10px 20px;
+      background-color: #2e8b57;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .app-link:hover {
+      background-color: #246b45;
+    }
+
+    .highlight {
+      background-color: #eafbea;
+      padding: 10px 15px;
+      border-left: 4px solid #2e8b57;
+      margin-top: 10px;
+    }
+
+    img {
       max-width: 100%;
-      height: auto;
-      margin: 30px auto 40px;
-      border: 2px solid #ddd;
       border-radius: 8px;
+      margin: 20px 0;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      margin-top: 20px;
-    }
-
-    .video-container iframe,
-    .video-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>IoT Agriculture Rover</h1>
-    <p><strong>User Manual</strong></p>
+    <h1>Agriculture Rover Project</h1>
+    <p><strong>Bluetooth-Controlled Seeding & Watering Prototype</strong></p>
   </header>
 
-  <!-- Project Image -->
-  <img src="your-image.jpg" alt="IoT Agriculture Rover Image" class="project-image" />
-
   <nav>
-    <a href="#introduction">Introduction</a>
-    <a href="#setup">Setup</a>
-    <a href="#usage">Usage</a>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#maintenance">Maintenance</a>
-    <a href="#troubleshooting">Troubleshooting</a>
-    <a href="#contact">Contact</a>
+    <a href="#overview">Overview</a>
+    <a href="#features">Features</a>
+    <a href="#components">Components</a>
+    <a href="#setup">Setup Guide</a>
+    <a href="#support">Support</a>
   </nav>
 
   <main>
-    <section id="introduction">
-      <h2>1. Introduction</h2>
-      <p>The IoT Agriculture Rover is a smart field robot designed to monitor soil conditions, assist with data-driven farming, and provide automated support in agricultural operations. This manual walks you through setup, usage, maintenance, and troubleshooting.</p>
-      
-      <!-- Project Demo Video -->
-      <div class="video-container">
-        <!-- Option 1: Embed YouTube video -->
-        <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
 
-        <!-- Option 2: Self-hosted MP4 video -->
-        <video controls>
-          <source src="your-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>
+        This Agriculture Rover is a working prototype that demonstrates the core functionalities of autonomous farming robots. 
+        Controlled via Bluetooth using a custom Android app, the rover can navigate through fields, pump water, and seed soil 
+        with simple and intuitive commands.
+      </p>
+      <p>
+        The rover is powered by <strong>Arduino Uno</strong> and built with 3D-printed PLA components, showcasing the potential of rapid prototyping in agriculture tech.
+      </p>
+      <a class="app-link" href="https://example.com/app-download" target="_blank">📱 Download Android App</a>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Bluetooth-based control via custom Android application.</li>
+        <li>Pumps water using a mini 5V pump on command.</li>
+        <li>Performs seeding through a servo-controlled seed valve (SG90).</li>
+        <li>Lightweight, compact design using 3D-printed PLA parts.</li>
+        <li>Powered by two 18650 cells; rechargeable via 12V input (max 5 mins).</li>
+      </ul>
+    </section>
+
+    <section id="components">
+      <h2>Hardware Components</h2>
+      <ul>
+        <li>Arduino Uno</li>
+        <li>HC-05 Bluetooth Module</li>
+        <li>SG90 Servo Motor (for seed valve)</li>
+        <li>Mini 5V Water Pump (for irrigation)</li>
+        <li>Relay Module</li>
+        <li>2 × 18650 Li-ion Cells</li>
+        <li>3D Printed Parts: Water Tank, Arduino Case, Seed Container (PLA)</li>
+      </ul>
     </section>
 
     <section id="setup">
-      <h2>2. Getting Started & Setup</h2>
+      <h2>Setup Instructions</h2>
+      <ol>
+        <li>Charge the rover using a <strong>12V power source</strong> for <strong>no more than 5 minutes</strong>.</li>
+        <li>Download and install the custom Android app from the link above.</li>
+        <li>Power on the rover using the main switch.</li>
+        <li>Enable Bluetooth on your Android device.</li>
+        <li>Scan for available devices and connect to <strong>HC-05</strong> (may appear as "HC05").</li>
+        <li>Open the app and select the connected HC-05 device from the list.</li>
+        <li>Once connected, you can control navigation, pump water, and trigger seeding using the app’s intuitive controls.</li>
+      </ol>
+
+      <div class="highlight">
+        Note: This is a prototype for demonstration purposes only. For real field deployment, further ruggedization and automation would be required.
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>Support & Contact</h2>
+      <p>If you need help with setup or have questions, feel free to contact us:</p>
       <ul>
-        <li><strong>Included:</strong> Rover unit, battery pack, charger, soil sensors, camera module (optional), user guide.</li>
-        <li><strong>Requirements:</strong> Smartphone/PC with internet, mobile app or web dashboard access.</li>
-        <li><strong>Assembly:</strong> Attach sensors, insert battery, power on using the main switch.</li>
-        <li><strong>App Setup:</strong> Install the mobile app or go to the web dashboard. Follow on-screen pairing instructions.</li>
+        <li>Email: <a href="mailto:abc@gmail.com">yashrajkumawat7357@gmail.com</a></li>
       </ul>
     </section>
 
-    <section id="usage">
-      <h2>3. Using the Rover</h2>
-      <p>After successful setup, use the app to control and monitor the rover:</p>
-      <ul>
-        <li>Switch between manual and auto modes.</li>
-        <li>View real-time sensor data (moisture, temperature, humidity).</li>
-        <li>Track location using GPS (if enabled).</li>
-        <li>Record data logs and sync to the cloud.</li>
-      </ul>
-    </section>
-
-    <section id="dashboard">
-      <h2>4. Dashboard Guide</h2>
-      <ul>
-        <li>Sensor Display: Real-time readings.</li>
-        <li>Control Panel: Joystick or route selection.</li>
-        <li>Map View: Live GPS position of rover.</li>
-        <li>Analytics: Charts for historical data.</li>
-      </ul>
-    </section>
-
-    <section id="maintenance">
-      <h2>5. Maintenance</h2>
-      <ul>
-        <li>Clean sensors after each use.</li>
-        <li>Keep electronics dry.</li>
-        <li>Recharge battery before storage.</li>
-        <li>Run diagnostics monthly.</li>
-      </ul>
-    </section>
-
-    <section id="troubleshooting">
-      <h2>6. Troubleshooting</h2>
-      <ul>
-        <li><strong>No Power:</strong> Check battery connection or charge level.</li>
-        <li><strong>No Sensor Data:</strong> Recheck sensor ports and reboot system.</li>
-        <li><strong>Connectivity Issue:</strong> Verify Wi-Fi range and signal strength.</li>
-        <li><strong>GPS Not Working:</strong> Ensure rover is in open outdoor space.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>7. Contact & Support</h2>
-      <p>For assistance, contact us at <a href="mailto:support@agrover.com">support@agrover.com</a> or visit our <a href="https://www.agrover.com/support" target="_blank">Support Page</a>.</p>
-    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 IoT Agriculture Rover Team. All rights reserved.</p>
+    <p>&copy; 2025 Agriculture Rover Project. All rights reserved.</p>
   </footer>
 
 </body>
